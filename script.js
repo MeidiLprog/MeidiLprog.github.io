@@ -1,37 +1,43 @@
-// --- Intro typing effect ---
-const text = "Je suis Meidi Lefki, Data Scientist & ML Engineer.";
-let i = 0;
-function typing() {
-  if (i < text.length) {
-    document.getElementById("typed").textContent += text.charAt(i);
-    i++;
-    setTimeout(typing, 60);
+/* -----------------------------------------
+  Have focus outline only for keyboard users 
+ ---------------------------------------- */
+
+const handleFirstTab = (e) => {
+  if(e.key === 'Tab') {
+    document.body.classList.add('user-is-tabbing')
+
+    window.removeEventListener('keydown', handleFirstTab)
+    window.addEventListener('mousedown', handleMouseDownOnce)
   }
+
 }
-window.onload = typing;
 
-// --- Lang switch ---
-const langBtn = document.getElementById('lang-toggle');
-langBtn.addEventListener('click', () => {
-  const lang = document.documentElement.lang === 'fr' ? 'en' : 'fr';
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-fr]').forEach(el => {
-    el.textContent = el.getAttribute(`data-${lang}`);
-  });
-  langBtn.textContent = lang === 'fr' ? '🇫🇷' : '🇬🇧';
-});
+const handleMouseDownOnce = () => {
+  document.body.classList.remove('user-is-tabbing')
 
-// --- Theme switch ---
-const themeBtn = document.getElementById('theme-toggle');
-themeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light');
-  themeBtn.textContent = document.body.classList.contains('light') ? '☀️' : '🌙';
-});
+  window.removeEventListener('mousedown', handleMouseDownOnce)
+  window.addEventListener('keydown', handleFirstTab)
+}
 
-// --- Scroll reveal animation ---
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.remove('hidden');
-  });
+window.addEventListener('keydown', handleFirstTab)
+
+const backToTopButton = document.querySelector(".back-to-top");
+let isBackToTopRendered = false;
+
+let alterStyles = (isBackToTopRendered) => {
+  backToTopButton.style.visibility = isBackToTopRendered ? "visible" : "hidden";
+  backToTopButton.style.opacity = isBackToTopRendered ? 1 : 0;
+  backToTopButton.style.transform = isBackToTopRendered
+    ? "scale(1)"
+    : "scale(0)";
+};
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 700) {
+    isBackToTopRendered = true;
+    alterStyles(isBackToTopRendered);
+  } else {
+    isBackToTopRendered = false;
+    alterStyles(isBackToTopRendered);
+  }
 });
-document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
