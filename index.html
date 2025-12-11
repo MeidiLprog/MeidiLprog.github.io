@@ -1,100 +1,169 @@
+<!-- 
+  Portfolio - Meidi Lefki
+  Adapted from Nisar Hassan’s template
+  https://github.com/nisarhassan12/portfolio-template
+-->
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meidi Lefki - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+
+  <!-- Titre du site -->
+  <title>Meidi Lefki | Machine Learning & Data Science</title>
+
+  <meta name="description" content="Portfolio de Meidi Lefki — Étudiant en Master 1 Machine Learning & Data Science à l’Université Paris Cité." />
+  <meta name="keywords" content="Meidi Lefki, Machine Learning, Data Science, Python, IA, Deep Learning, AI, Paris Cité" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 
-<body class="dark">
-  <!-- Barre de navigation -->
-  <nav class="navbar">
-    <h1>Meidi Lefki</h1>
-    <ul class="nav-links">
-      <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
-      <li><a href="#projects" data-fr="Projets" data-en="Projects">Projets</a></li>
-      <li><a href="#experience" data-fr="Expériences" data-en="Experience">Expériences</a></li>
-      <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
-    </ul>
-    <div class="controls">
-      <button id="lang-toggle">🇫🇷</button>
-      <button id="theme-toggle">🌙</button>
+<body>
+
+  <!-- ***** Header ***** -->
+
+  <header class="header" role="banner" id="top">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <ul class="nav__items">
+          <li class="nav__item"><a href="#work" class="nav__link">Projets</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">À propos</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
-
-  <!-- Section HERO -->
-  <section class="hero">
-    <h2><span id="typed"></span></h2>
-    <p data-fr="Bienvenue sur mon portfolio." data-en="Welcome to my portfolio.">
-      Bienvenue sur mon portfolio.
-    </p>
-    <a href="#about" class="btn" data-fr="Explorer" data-en="Explore">Explorer</a>
-  </section>
-
-  <!-- À propos -->
-  <section id="about" class="section hidden">
-    <h2 data-fr="À propos" data-en="About">À propos</h2>
-    <p data-fr="Étudiant en Master 1 Machine Learning & Data Science à l’Université Paris Cité, passionné par l’IA, le Deep Learning et la recherche appliquée."
-       data-en="Master’s student in Machine Learning & Data Science at Université Paris Cité, passionate about AI, Deep Learning, and applied research.">
-       Étudiant en Master 1 Machine Learning & Data Science à l’Université Paris Cité, passionné par l’IA, le Deep Learning et la recherche appliquée.
-    </p>
-  </section>
-
-  <!-- Projets -->
-  <section id="projects" class="section hidden">
-    <h2 data-fr="Projets" data-en="Projects">Projets</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>AutoData Agent</h3>
-        <p data-fr="Agent autonome orchestrant l’analyse et la modélisation (Hugging Face, Scikit-Learn)."
-           data-en="Autonomous agent for data analysis and modeling (Hugging Face, Scikit-Learn).">
-           Agent autonome orchestrant l’analyse et la modélisation (Hugging Face, Scikit-Learn).
-        </p>
-      </div>
-      <div class="card">
-        <h3>DataDocChatbot</h3>
-        <p data-fr="Pipeline RAG complet NLP (OCR, embeddings, Pinecone)."
-           data-en="Full RAG NLP pipeline (OCR, embeddings, Pinecone).">
-           Pipeline RAG complet NLP (OCR, embeddings, Pinecone).
-        </p>
-      </div>
-      <div class="card">
-        <h3>Détection de cancer (CNN)</h3>
-        <p data-fr="CNN pour images médicales (TensorFlow)."
-           data-en="CNN for medical imaging (TensorFlow).">
-           CNN pour images médicales (TensorFlow).
-        </p>
+    <div class="header__text-box row">
+      <div class="header__text">
+        <h1 class="heading-primary">
+          <span>Meidi Lefki</span>
+        </h1>
+        <p>Étudiant en Master 1 Machine Learning & Data Science à l’Université Paris Cité. Passionné par l’IA, le Deep Learning et la recherche appliquée.</p>
+        <a href="#contact" class="btn btn--pink">Me contacter</a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Expériences -->
-  <section id="experience" class="section hidden">
-    <h2 data-fr="Expériences" data-en="Experience">Expériences</h2>
-    <div class="card">
-      <h3>Stage Machine Learning – Univ. Avignon</h3>
-      <p data-fr="Analyse d’images perturbées et impact sur la vision artificielle."
-         data-en="Image perturbation analysis and impact on computer vision.">
-         Analyse d’images perturbées et impact sur la vision artificielle.
-      </p>
+  <main role="main">
+
+    <!-- ***** Projets ***** -->
+    <section class="work" id="work">
+      <div class="row">
+        <h2>Mes Projets</h2>
+        <div class="work__boxes">
+
+          <!-- Projet 1 -->
+          <div class="work__box">
+            <div class="work__text">
+              <h3>AutoData Agent</h3>
+              <p>Agent autonome de data science orchestrant l’analyse, le nettoyage et la modélisation de données (Hugging Face, Scikit-Learn).</p>
+              <ul class="work__list">
+                <li>Python</li>
+                <li>Scikit-Learn</li>
+                <li>Hugging Face</li>
+              </ul>
+              <div class="work__links">
+                <a href="https://huggingface.co/meidilefki" target="_blank" class="link__text">Voir sur Hugging Face <span>&rarr;</span></a>
+                <a href="https://github.com/MeidiLprog/AutoData-Agent" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/autodata.png" class="work__image" alt="AutoData Agent" />
+            </div>
+          </div>
+
+          <!-- Projet 2 -->
+          <div class="work__box">
+            <div class="work__text">
+              <h3>DataDocChatbot</h3>
+              <p>Chatbot RAG (Retrieval-Augmented Generation) utilisant OCR, embeddings et LangChain pour interagir avec des documents PDF.</p>
+              <ul class="work__list">
+                <li>LangChain</li>
+                <li>Groq</li>
+                <li>OpenAI API</li>
+              </ul>
+              <div class="work__links">
+                <a href="https://github.com/MeidiLprog/DataDocChatbot" class="link__text" target="_blank">Voir le projet <span>&rarr;</span></a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/datadoc.png" class="work__image" alt="DataDocChatbot" />
+            </div>
+          </div>
+
+          <!-- Projet 3 -->
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Détection de Cancer (CNN)</h3>
+              <p>Réseau de neurones convolutifs (TensorFlow) pour la détection d’images médicales anormales.</p>
+              <ul class="work__list">
+                <li>TensorFlow</li>
+                <li>Keras</li>
+                <li>OpenCV</li>
+              </ul>
+              <div class="work__links">
+                <a href="https://github.com/MeidiLprog/Cancer-Detection-CNN" class="link__text" target="_blank">Voir sur GitHub <span>&rarr;</span></a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/cancer.png" class="work__image" alt="Projet CNN" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ***** À propos ***** -->
+    <section class="about" id="about">
+      <div class="row">
+        <h2>À propos</h2>
+        <div class="about__content">
+          <div class="about__text">
+            <p>Je m’appelle Meidi Lefki, actuellement en Master 1 Machine Learning & Data Science à l’Université Paris Cité. 
+            J’aime explorer les modèles d’IA, les systèmes de recommandation et la vision artificielle. 
+            Je cherche à créer des solutions basées sur la donnée, robustes et interprétables.</p>
+            <a href="./CV_MeidiLefki.pdf" class="btn" target="_blank">Mon CV</a>
+          </div>
+          <div class="about__photo-container">
+            <img class="about__photo" src="./images/meidi.jpg" alt="Photo de Meidi Lefki" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ***** Contact ***** -->
+  <section class="contact" id="contact">
+    <div class="row">
+      <h2>Contact</h2>
+      <div class="contact__info">
+        <p>Je suis toujours ouvert à discuter de projets intéressants en IA, Data Science ou développement web. N’hésitez pas à me contacter !</p>
+        <a href="mailto:m.lef3105@gmail.com" class="btn">m.lef3105@gmail.com</a>
+      </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section hidden">
-    <h2 data-fr="Contact" data-en="Contact">Contact</h2>
-    <p data-fr="Restons en contact !" data-en="Let's get in touch!">Restons en contact !</p>
-    <ul class="contact-links">
-      <li><a href="mailto:m.lef3105@gmail.com">✉️ Email</a></li>
-      <li><a href="https://github.com/MeidiLprog" target="_blank">🐙 GitHub</a></li>
-      <li><a href="https://linkedin.com/in/lefkimeidi" target="_blank">💼 LinkedIn</a></li>
-      <li><a href="https://huggingface.co/meidilefki" target="_blank">🤗 Hugging Face</a></li>
-      <li><a href="https://www.kaggle.com/meidilefki" target="_blank">📊 Kaggle</a></li>
-    </ul>
-  </section>
+  <!-- ***** Footer ***** -->
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <ul class="footer__social-links">
+        <li><a href="https://github.com/MeidiLprog" title="GitHub"><img src="./images/github.svg" class="footer__social-image" alt="GitHub"></a></li>
+        <li><a href="https://linkedin.com/in/lefkimeidi" title="LinkedIn"><img src="./images/linkedin.svg" class="footer__social-image" alt="LinkedIn"></a></li>
+        <li><a href="https://huggingface.co/meidilefki" title="Hugging Face"><img src="./images/codepen.svg" class="footer__social-image" alt="Hugging Face"></a></li>
+        <li><a href="https://www.kaggle.com/meidilefki" title="Kaggle"><img src="./images/twitter.svg" class="footer__social-image" alt="Kaggle"></a></li>
+      </ul>
 
-  <footer>© 2025 Meidi Lefki</footer>
+      <p>&copy; 2025 — Portfolio conçu par <a href="https://github.com/MeidiLprog" class="link">Meidi Lefki</a>. Inspiré du template de <a href="https://nisar.dev" class="link">Nisar Hassan</a>.</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" title="Retour en haut">
+    <img src="./images/arrow-up.svg" alt="Retour en haut" class="back-to-top__image"/>
+  </a>
+
+  <script src="./index.js"></script>
 </body>
 </html>
